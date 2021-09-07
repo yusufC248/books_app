@@ -1,16 +1,39 @@
-# books_app
+## books_app
 
-A new Flutter application.
+BOOKS STORE
+Prototipe Rancangan UI untuk Aplikasi Penjualan Buku
 
-## Getting Started
+#Tampilan UI
+![1](https://user-images.githubusercontent.com/74696838/132414717-4d7bc572-365d-41f9-b6cc-1263947b1bb4.PNG)
+![2](https://user-images.githubusercontent.com/74696838/132414738-ddb7d0c9-d7d1-4655-ae1c-b8bbbe8de9b4.PNG)
+![3](https://user-images.githubusercontent.com/74696838/132414752-ce8b7ed6-c72f-4094-8dc2-da18fdcb6f07.PNG)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Ide
+Desain Project ini terinspirasi dari UI Marketplace Online dan UI Dompet Digital
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+#Widget yang digunakan : 
+- Appbar
+- Text
+- Image
+- Icon
+- Padding
+- Container
+- Column
+- Row
+- ListView
+- Curved_Navigation_Bar
+- BoxDecoration
+- ClipRRect
+- Outlined Button
+- Text Button
+- Elevated Button
+- Scaffold
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Referensi
+- Referensi banner dari gambar di Internet
+- Cover Buku karya Tere Liye
+
+# Masih dikembangkan :
+- backend
+- halaman lainnya
