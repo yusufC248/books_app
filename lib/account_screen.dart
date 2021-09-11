@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Akun extends StatelessWidget {
-  const Akun({Key? key}) : super(key: key);
+  const Akun({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

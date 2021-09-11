@@ -1,4 +1,5 @@
-import 'package:books_app/HomeScreen.dart';
+import 'package:books_app/form/form_screen.dart';
+import 'package:books_app/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFFF91091E),
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: FormScreen(),
     );
   }
 }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-import 'AccountScreen.dart';
-import 'MessageScreen.dart';
+import 'account_screen.dart';
+import 'message_screen.dart';
 
 class HomeScreen extends StatefulWidget {
 
@@ -69,7 +69,8 @@ class Beranda extends StatelessWidget {
            Text("BOOKS STORE"),
             Icon(Icons.search, size: 24, color: Colors.white),
           ],
-        )
+        ),
+        elevation: 0,
 
 
       ),
@@ -101,7 +102,7 @@ class Header extends StatelessWidget {
               ),
             ),
         Container(
-          height: size.height,
+          height: 900,
           width: size.width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(topLeft: Radius.circular(45), topRight: Radius.circular(45)),
@@ -111,7 +112,7 @@ class Header extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(left: 18, top: 12, right: 4),
+                padding: const EdgeInsets.only(left: 18, top: 12, right: 18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -156,13 +157,13 @@ class Header extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 18, top: 12, right: 4),
+                padding: const EdgeInsets.only(left: 18, top: 12, right: 18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Best Seller", style: TextStyle(fontSize: 22, color:Colors.black, fontWeight: FontWeight.bold ),),
-                    ElevatedButton(onPressed: (){},
-                        child: Text("View All", style: TextStyle(color: Colors.black),))
+                    OutlinedButton(onPressed: (){},
+                        child: Text("View All", style: TextStyle(color: Color(0xFFF91091E)),))
                   ],
                 ),
               ),
@@ -216,13 +217,13 @@ class Header extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 18, top: 12, right: 4),
+                padding: const EdgeInsets.only(left: 18, top: 12, right: 18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Brand New", style: TextStyle(fontSize: 22, color:Colors.black, fontWeight: FontWeight.bold ),),
-                    TextButton(onPressed: (){},
-                        child: Text("View All", style: TextStyle(color: Colors.black),))
+                    OutlinedButton(onPressed: (){},
+                        child: Text("View All", style: TextStyle(color: Color(0xFFF91091E)),))
                   ],
                 ),
               ),
