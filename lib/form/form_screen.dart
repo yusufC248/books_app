@@ -327,19 +327,30 @@ class _FormScreenState extends State<FormScreen> {
                           (renang ? 'Berenang, ' : '') +
                           ( game ? 'Bermain games' : '');
 
-                      showDialog(context: context,
-                          builder: (BuildContext context){
-                            return CustomDialog(
-                              nama: _nama,
-                              alamat: _alamat,
-                              email: _email,
-                              notelp: _notelp,
-                              jk: _jk,
-                              hobi: _hobi,
-                              tanggal : _date.toString(),
-                              waktu : _time.format(context),
-                            );
-                          });
+                      if(_jk.isEmpty || _hobi.isEmpty){
+                        final snackbar = SnackBar(content: const Text("Data belum lengkap"),
+                          action: SnackBarAction(
+                            label: 'Lengkapi',
+                            onPressed: () {
+                            },
+                          ),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                      }else{
+                        showDialog(context: context,
+                            builder: (BuildContext context){
+                              return CustomDialog(
+                                nama: _nama,
+                                alamat: _alamat,
+                                email: _email,
+                                notelp: _notelp,
+                                jk: _jk,
+                                hobi: _hobi,
+                                tanggal : _date.toString(),
+                                waktu : _time.format(context),
+                              );
+                            });
+                      }
                     },
 
                     child: Text("Submit"))
