@@ -1,3 +1,4 @@
+import 'package:books_app/form/widget/widget_textformfield.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_dialog.dart';
@@ -12,6 +13,14 @@ class FormScreen extends StatefulWidget {
 class _FormScreenState extends State<FormScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  TextEditingController _namacontroller = TextEditingController();
+  TextEditingController _alamatcontroller = TextEditingController();
+  TextEditingController _mobilecontroller = TextEditingController();
+  TextEditingController _emailcontroller = TextEditingController();
+
+  TimeOfDay _time = TimeOfDay(hour: 7, minute: 15);
+  DateTime _date = DateTime(2021, 09, 12);
+
   String _nama;
   String _alamat;
   String _notelp;
@@ -23,6 +32,12 @@ class _FormScreenState extends State<FormScreen> {
   bool game = false;
   String tanggal = "";
   String waktu = "";
+
+  String validateNama(String value){
+    if(value.isEmpty){
+      return "Nama tidak boleh kosong";
+    }
+  }
 
   String validateEmail(String value) {
     Pattern pattern =
@@ -48,8 +63,13 @@ class _FormScreenState extends State<FormScreen> {
     return null;
   }
 
-  TimeOfDay _time = TimeOfDay(hour: 7, minute: 15);
-  DateTime _date = DateTime(2021, 09, 12);
+
+  String validateAlamat(String value){
+    if(value.isEmpty){
+      return "Alamat tidak boleh kosong";
+    }
+  }
+
 
   void _selectDate() async {
     final DateTime newDate = await showDatePicker(
@@ -82,76 +102,53 @@ class _FormScreenState extends State<FormScreen> {
   Widget _buildNama(){
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: TextFormField(
-        decoration: InputDecoration(
-          labelText: 'Nama',
-          border: OutlineInputBorder(),
-        ),
-        autofocus: true,
-        validator: (String value){
-          if(value.isEmpty){
-            return 'Nama tidak boleh kosong';
-          }
-        },
-        onSaved: (String value){
-          _nama = value;
-        },
-      ),
+      child: WidgetTextFormField(
+        labelText: "Masukan Nama",
+        hintText: "nama",
+        controller: _namacontroller,
+        inputType: TextInputType.text,
+        validator: validateNama,
+      )
     );
   }
 
   Widget _buildAlamat(){
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: TextFormField(
-        decoration: InputDecoration(
-          labelText: 'Alamat',
-          border: OutlineInputBorder(),
-        ),
+      child: WidgetTextFormField(
+        labelText: "Masukan Alamat",
+        hintText: "Alamat",
         maxLines: 3,
-        validator: (String value){
-          if(value.isEmpty){
-            return 'Alamat tidak boleh kosong';
-          }
-        },
-        onSaved: (String value){
-          _alamat = value;
-        },
-      ),
+        controller: _alamatcontroller,
+        inputType: TextInputType.text,
+        validator: validateAlamat,
+      )
     );
   }
 
   Widget _buildnotelp(){
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: TextFormField(
-        decoration: InputDecoration(
-          labelText: 'No. Telepon',
-          border: OutlineInputBorder(),
-        ),
-        keyboardType: TextInputType.phone,
+      child: WidgetTextFormField(
+        labelText: "Masukan Nomor Telepon",
+        hintText: "08xxxxxxxx",
+        controller: _mobilecontroller,
+        inputType: TextInputType.phone,
         validator: validateMobile,
-        onSaved: (String value){
-          _notelp = value;
-        },
-      ),
+      )
     );
   }
 
   Widget _buildEmail(){
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: TextFormField(
-        decoration: InputDecoration(
-          labelText: 'Email',
-          border: OutlineInputBorder(),
-        ),
-        keyboardType: TextInputType.emailAddress,
+      child: WidgetTextFormField(
+        labelText: "Masukan Email",
+        hintText: "xxxx@youremail",
+        controller: _emailcontroller,
+        inputType: TextInputType.emailAddress,
         validator: validateEmail,
-        onSaved: (String value){
-          _email = value;
-        },
-      ),
+      )
     );
   }
 
@@ -321,7 +318,12 @@ class _FormScreenState extends State<FormScreen> {
                         return;
                       }
 
-                      _formKey.currentState.save();
+                     setState(() {
+                       _nama = _namacontroller.text;
+                       _alamat = _alamatcontroller.text;
+                       _notelp = _mobilecontroller.text;
+                       _email = _emailcontroller.text;
+                     });
 
                       _hobi = (baca ? 'Membaca, ' : '')+
                           (renang ? 'Berenang, ' : '') +
@@ -353,7 +355,7 @@ class _FormScreenState extends State<FormScreen> {
                       }
                     },
 
-                    child: Text("Submit"))
+                    child: Text("SUBMIT"))
               ],
             ),
           ),
