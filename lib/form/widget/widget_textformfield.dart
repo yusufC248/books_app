@@ -26,8 +26,3 @@ class WidgetTextFormField extends StatelessWidget {
   }
 }
 
-String validateKosong(String value){
-  if(value.isEmpty){
-    return "$value Harus diisi";
-  }
-}

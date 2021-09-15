@@ -101,54 +101,54 @@ class _FormScreenState extends State<FormScreen> {
 
   Widget _buildNama(){
     return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: WidgetTextFormField(
-        labelText: "Masukan Nama",
-        hintText: "nama",
-        controller: _namacontroller,
-        inputType: TextInputType.text,
-        validator: validateNama,
-      )
+        padding: const EdgeInsets.all(16.0),
+        child: WidgetTextFormField(
+          labelText: "Masukan Nama",
+          hintText: "nama",
+          controller: _namacontroller,
+          inputType: TextInputType.text,
+          validator: validateNama,
+        )
     );
   }
 
   Widget _buildAlamat(){
     return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: WidgetTextFormField(
-        labelText: "Masukan Alamat",
-        hintText: "Alamat",
-        maxLines: 3,
-        controller: _alamatcontroller,
-        inputType: TextInputType.text,
-        validator: validateAlamat,
-      )
+        padding: const EdgeInsets.all(16.0),
+        child: WidgetTextFormField(
+          labelText: "Masukan Alamat",
+          hintText: "Alamat",
+          maxLines: 3,
+          controller: _alamatcontroller,
+          inputType: TextInputType.text,
+          validator: validateAlamat,
+        )
     );
   }
 
   Widget _buildnotelp(){
     return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: WidgetTextFormField(
-        labelText: "Masukan Nomor Telepon",
-        hintText: "08xxxxxxxx",
-        controller: _mobilecontroller,
-        inputType: TextInputType.phone,
-        validator: validateMobile,
-      )
+        padding: const EdgeInsets.all(16.0),
+        child: WidgetTextFormField(
+          labelText: "Masukan Nomor Telepon",
+          hintText: "08xxxxxxxx",
+          controller: _mobilecontroller,
+          inputType: TextInputType.phone,
+          validator: validateMobile,
+        )
     );
   }
 
   Widget _buildEmail(){
     return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: WidgetTextFormField(
-        labelText: "Masukan Email",
-        hintText: "xxxx@youremail",
-        controller: _emailcontroller,
-        inputType: TextInputType.emailAddress,
-        validator: validateEmail,
-      )
+        padding: const EdgeInsets.all(16.0),
+        child: WidgetTextFormField(
+          labelText: "Masukan Email",
+          hintText: "xxxx@youremail",
+          controller: _emailcontroller,
+          inputType: TextInputType.emailAddress,
+          validator: validateEmail,
+        )
     );
   }
 
@@ -318,12 +318,12 @@ class _FormScreenState extends State<FormScreen> {
                         return;
                       }
 
-                     setState(() {
-                       _nama = _namacontroller.text;
-                       _alamat = _alamatcontroller.text;
-                       _notelp = _mobilecontroller.text;
-                       _email = _emailcontroller.text;
-                     });
+                      setState(() {
+                        _nama = _namacontroller.text;
+                        _alamat = _alamatcontroller.text;
+                        _notelp = _mobilecontroller.text;
+                        _email = _emailcontroller.text;
+                      });
 
                       _hobi = (baca ? 'Membaca, ' : '')+
                           (renang ? 'Berenang, ' : '') +
@@ -364,4 +364,3 @@ class _FormScreenState extends State<FormScreen> {
     );
   }
 }
-
