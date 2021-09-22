@@ -17,10 +17,9 @@ Output ditampilkan didalam dialog
 
 
 # Tampilan UI
+![update 1](https://user-images.githubusercontent.com/74696838/134342527-92136de6-a206-4f7d-a956-7c706d70c0d5.PNG) 
+![update 2](https://user-images.githubusercontent.com/74696838/134342631-22686862-6e37-42d0-9db9-80e4861e52be.PNG)
 
-![1](https://user-images.githubusercontent.com/74696838/132414717-4d7bc572-365d-41f9-b6cc-1263947b1bb4.PNG)
-![2](https://user-images.githubusercontent.com/74696838/132414738-ddb7d0c9-d7d1-4655-ae1c-b8bbbe8de9b4.PNG)
-![3](https://user-images.githubusercontent.com/74696838/132414752-ce8b7ed6-c72f-4094-8dc2-da18fdcb6f07.PNG)
 
 
 # Ide
@@ -36,13 +35,12 @@ Desain Project ini terinspirasi dari UI Marketplace Online dan UI Dompet Digital
 - Column
 - Row
 - ListView
-- Curved_Navigation_Bar
 - BoxDecoration
 - ClipRRect
 - Outlined Button
-- Text Button
-- Elevated Button
 - Scaffold
+- Expanded
+- Bottom Navigation bar
 
 # Referensi
 - Referensi banner dari gambar di Internet
